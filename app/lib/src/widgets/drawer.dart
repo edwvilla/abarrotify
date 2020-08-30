@@ -20,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.grey[850], fontSize: 16),
             ),
             accountEmail: Text(
-              'villaceniceros@gmail.com',
+              Auth().getCurrentUser().email ?? '',
               style: TextStyle(color: Colors.grey[850], fontSize: 16),
             ),
           ),
