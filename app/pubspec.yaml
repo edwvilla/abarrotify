@@ -14,7 +14,11 @@ dependencies:
 
   cloud_firestore: ^0.14.0+2
   firebase_auth: ^0.18.0+1
+<<<<<<< HEAD
   image_picker:
+=======
+  firebase_core: ^0.5.0
+>>>>>>> signin-signup-setup
 
   cupertino_icons: ^0.1.3
   http:

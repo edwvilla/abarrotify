@@ -1,4 +1,5 @@
 import 'package:abarrotify/src/pages/auth/register_page.dart';
+import 'package:abarrotify/src/services/authentication.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +12,15 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  FocusNode emailNode = FocusNode();
+  FocusNode passwordNode = FocusNode();
+
+  @override
+  void setState(_) {
+    super.setState(_);
+    emailNode.requestFocus();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(10),
             child: TextField(
               controller: emailController,
+              focusNode: emailNode,
               decoration: InputDecoration(
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -38,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 labelText: 'Ingrese su correo...',
               ),
+              onSubmitted: (String value) => passwordNode.requestFocus(),
             ),
           ),
           Container(
@@ -45,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               obscureText: true,
               controller: passwordController,
+              focusNode: passwordNode,
               decoration: InputDecoration(
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -53,6 +66,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 labelText: 'Contraseña...',
               ),
+              onSubmitted: (String value) {
+                passwordNode.unfocus();
+                _signIn();
+              },
             ),
           ),
           const SizedBox(height: 20),
@@ -66,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.greenAccent[700],
                 child: const Text('Iniciar sesión'),
                 onPressed: () {
-                  //TODO Add auth functionality
                   print(emailController.text);
                   print(passwordController.text);
+                  _signIn();
                 },
               )),
           FlatButton(
@@ -100,5 +117,9 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  void _signIn() {
+    Auth().signIn(emailController.text, passwordController.text, context);
   }
 }
