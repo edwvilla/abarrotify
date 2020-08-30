@@ -20,7 +20,7 @@ class _RootPageState extends State<RootPage> {
   @override
   void initState() {
     super.initState();
-    user != null
+    user == null
         ? Navigator.pushNamedAndRemoveUntil(context, LoginPage.id, (_) => false)
         : Navigator.pushNamedAndRemoveUntil(context, ListPage.id, (_) => false);
   }
