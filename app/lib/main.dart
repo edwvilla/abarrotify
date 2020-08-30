@@ -1,5 +1,6 @@
 import 'package:abarrotify/src/pages/map_page.dart';
 import 'package:abarrotify/src/pages/seller/become_seller.dart';
+import 'package:abarrotify/src/pages/seller/create_product.dart';
 import 'package:abarrotify/src/pages/shopping_basket_page.dart';
 import 'package:flutter/material.dart';
 import 'src/const.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         MapPage.id: (BuildContext context) => MapPage(),
         ShoppingCart.id: (BuildContext context) => ShoppingCart(),
         BecomeSeller.id: (BuildContext context) => BecomeSeller(),
+        CreateProductPage.id: (BuildContext context) => CreateProductPage(),
         LoginPage.id: (BuildContext context) => LoginPage(),
         RegisterPage.id: (BuildContext context) => RegisterPage(),
       },
