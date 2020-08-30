@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "47829120238",
+    "firebase_url": "https://pluto-57376.firebaseio.com",
+    "project_id": "pluto-57376",
+    "storage_bucket": "pluto-57376.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47829120238:android:ce449ad15d0a969d90efff",
+        "android_client_info": {
+          "package_name": "com.example.abarrotify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47829120238-8abfsq2ktpasssn61qoepjj25jnkjdbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5wCpxJ7gLnsLh6koBbizJPrO2Ub0wwSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47829120238-8abfsq2ktpasssn61qoepjj25jnkjdbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47829120238:android:055996bea3ef067e90efff",
+        "android_client_info": {
+          "package_name": "com.example.pluto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47829120238-8abfsq2ktpasssn61qoepjj25jnkjdbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5wCpxJ7gLnsLh6koBbizJPrO2Ub0wwSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47829120238-8abfsq2ktpasssn61qoepjj25jnkjdbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
