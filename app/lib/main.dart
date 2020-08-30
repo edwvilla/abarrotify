@@ -1,4 +1,5 @@
 import 'package:abarrotify/src/pages/map_page.dart';
+import 'package:abarrotify/src/pages/root_page.dart';
 import 'package:abarrotify/src/pages/seller/become_seller.dart';
 import 'package:flutter/material.dart';
 import 'src/const.dart';
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: kThemeData,
       title: 'Material App',
-      initialRoute: MapPage.id,
+      initialRoute: '/',
       routes: <String, Widget Function(BuildContext)>{
+        RootPage.id: (BuildContext context) => RootPage(),
         ListPage.id: (BuildContext context) => ListPage(),
         MapPage.id: (BuildContext context) => MapPage(),
         LoginPage.id: (BuildContext context) => LoginPage(),
