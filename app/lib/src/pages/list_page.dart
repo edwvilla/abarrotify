@@ -1,3 +1,4 @@
+import 'package:abarrotify/src/widgets/appbar.dart';
 import 'package:abarrotify/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -10,14 +11,10 @@ class ListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: CustomDrawer(),
-      appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.shopping_basket_outlined),
-            //TODO Add basket functionality
-            onPressed: () {},
-          )
-        ],
+      appBar: CustomAppBar(
+        appBar: AppBar(),
+        icon: Icons.shopping_basket_outlined,
+        onTap: () {},
       ),
       body: ListView(
         children: <Widget>[
@@ -37,7 +34,7 @@ class ListPage extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: const <Widget>[
-          // TODO Add builder
+          // TODO Add builder and filter selected category using queries
           TabItem(title: 'Todo', color: Colors.green),
           TabItem(title: 'Frutas'),
           TabItem(title: 'Verduras'),

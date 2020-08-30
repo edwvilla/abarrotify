@@ -1,3 +1,5 @@
+import 'package:abarrotify/src/pages/list_page.dart';
+import 'package:abarrotify/src/pages/map_page.dart';
 import 'package:abarrotify/src/pages/seller/become_seller.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +37,20 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(BecomeSeller.id);
               },
             ),
+          ),
+          ListTile(
+            title: const Text('Productos'),
+            trailing: const Icon(Icons.fastfood),
+            onTap: () {
+              Navigator.pushNamed(context, ListPage.id);
+            },
+          ),
+          ListTile(
+            title: const Text('Abarrotes cerca'),
+            trailing: const Icon(Icons.room),
+            onTap: () {
+              Navigator.pushNamed(context, MapPage.id);
+            },
           ),
           ListTile(
             title: const Text('Historial de compras'),
