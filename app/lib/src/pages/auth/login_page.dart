@@ -18,21 +18,21 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           Container(width: double.infinity),
-          Icon(
+          const Icon(
             Icons.shopping_basket_outlined,
             color: Colors.green,
             size: 80,
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: TextField(
               controller: emailController,
               decoration: InputDecoration(
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -41,13 +41,13 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextField(
               obscureText: true,
               controller: passwordController,
               decoration: InputDecoration(
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -55,16 +55,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
               height: 50,
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 textColor: Colors.white,
                 color: Colors.greenAccent[700],
-                child: Text('Iniciar sesión'),
+                child: const Text('Iniciar sesión'),
                 onPressed: () {
                   //TODO Add auth functionality
                   print(emailController.text);
@@ -76,15 +76,15 @@ class _LoginPageState extends State<LoginPage> {
               //forgot password screen
             },
             textColor: Colors.blue,
-            child: Text('Olvidó su contraseña?'),
+            child: const Text('Olvidó su contraseña?'),
           ),
           Container(
             child: Row(
               children: <Widget>[
-                Text('No tiene cuenta?'),
+                const Text('No tiene cuenta?'),
                 FlatButton(
                   textColor: Colors.blue,
-                  child: Text(
+                  child: const Text(
                     'Registrarse',
                     style: TextStyle(fontSize: 15),
                   ),

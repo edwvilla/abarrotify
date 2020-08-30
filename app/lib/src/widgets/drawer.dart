@@ -12,19 +12,19 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.grey[50],
             ),
             accountName: Text(
-              "Edwin Villa",
+              'Edwin Villa',
               style: TextStyle(color: Colors.grey[850], fontSize: 16),
             ),
             accountEmail: Text(
-              "villaceniceros@gmail.com",
+              'villaceniceros@gmail.com',
               style: TextStyle(color: Colors.grey[850], fontSize: 16),
             ),
           ),
           Ink(
             color: Colors.greenAccent[700],
             child: ListTile(
-              title: Text(
-                "Registrarme como Vendedor",
+              title: const Text(
+                'Registrarme como Vendedor',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -37,15 +37,15 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text("Historial de compras"),
+            title: const Text('Historial de compras'),
             onTap: () {},
           ),
           ListTile(
-            title: Text("Formas de pago"),
+            title: const Text('Formas de pago'),
             onTap: () {},
           ),
           ListTile(
-            title: Text("Legales"),
+            title: const Text('Legales'),
             onTap: () {},
           )
         ],
