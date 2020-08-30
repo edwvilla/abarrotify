@@ -21,40 +21,52 @@ class ProductCard extends StatelessWidget {
                 product.image,
               ),
             ),
-            const SizedBox(height: 5),
-            Text(
-              product.name,
-              style: TextStyle(color: Colors.grey[850]),
-            ),
-            const Divider(),
-            Row(
-              children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      '\$ ${product.price}',
-                      style: TextStyle(color: Colors.grey[850]),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    product.name,
+                    style: TextStyle(
+                      color: Colors.grey[850],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
-                    Text(product.unit)
-                  ],
-                ),
-                const Spacer(),
-                RaisedButton(
-                  padding: const EdgeInsets.all(0),
-                  child: const Text(
-                    'Comprar',
-                    style: TextStyle(color: Colors.white),
                   ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)),
-                  color: Colors.greenAccent[700],
-                  onPressed: () {
-                    //TODO Add basket functionality on card
-                  },
-                )
-              ],
+                  Row(
+                    children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: <Widget>[
+                          Text(
+                            '\$ ${product.price}',
+                            style: TextStyle(color: Colors.grey[850]),
+                          ),
+                          Text(product.unit)
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: <Widget>[
+                          RaisedButton(
+                            padding: const EdgeInsets.all(0),
+                            child: const Text(
+                              'Comprar',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30)),
+                            color: Colors.greenAccent[700],
+                            onPressed: () {
+                              //TODO Add basket functionality on card
+                            },
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
