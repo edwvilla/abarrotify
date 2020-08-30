@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/product_model.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard(this.product);
+  const ProductCard(this.product);
   final Product product;
   @override
   Widget build(BuildContext context) {
@@ -11,39 +11,39 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Container(
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.network(
                 product.image,
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
               product.name,
               style: TextStyle(color: Colors.grey[850]),
             ),
-            Divider(),
+            const Divider(),
             Row(
-              children: [
+              children: <Widget>[
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Text(
                       '\$ ${product.price}',
                       style: TextStyle(color: Colors.grey[850]),
                     ),
-                    Text('${product.unit}')
+                    Text(product.unit)
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 RaisedButton(
-                  padding: EdgeInsets.all(0),
-                  child: Text(
+                  padding: const EdgeInsets.all(0),
+                  child: const Text(
                     'Comprar',
                     style: TextStyle(color: Colors.white),
                   ),

@@ -1,8 +1,8 @@
 import 'package:abarrotify/src/widgets/drawer.dart';
+import 'package:flutter/material.dart';
 
 import '../models/product_model.dart';
 import '../widgets/product_card.dart';
-import 'package:flutter/material.dart';
 
 class ListPage extends StatelessWidget {
   static String id = 'list_page';
@@ -11,16 +11,16 @@ class ListPage extends StatelessWidget {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
-        actions: [
+        actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.shopping_basket_outlined),
+            icon: const Icon(Icons.shopping_basket_outlined),
             //TODO Add basket functionality
             onPressed: () {},
           )
         ],
       ),
       body: ListView(
-        children: [
+        children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: _searchInput(context),
@@ -36,7 +36,7 @@ class ListPage extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: [
+        children: const <Widget>[
           // TODO Add builder
           TabItem(title: 'Todo', color: Colors.green),
           TabItem(title: 'Frutas'),
@@ -53,9 +53,10 @@ class ListPage extends StatelessWidget {
   Widget _searchInput(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        suffixIcon: Icon(Icons.search),
+        suffixIcon: const Icon(Icons.search),
         labelText: 'Buscar...',
-        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),
         ),
@@ -71,10 +72,10 @@ class TabItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Column(
-      children: [
-        SizedBox(height: 5),
+      children: <Widget>[
+        const SizedBox(height: 5),
         Text(
           title,
           style: TextStyle(
@@ -82,14 +83,14 @@ class TabItem extends StatelessWidget {
             color: Colors.grey[850],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           height: 5,
           //TODO too funky
           width: size.width / 35 * title.length,
           color: color,
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
       ],
     );
   }
@@ -107,13 +108,13 @@ class ProductListing extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
-      physics: ClampingScrollPhysics(),
+      physics: const ClampingScrollPhysics(),
       itemCount: 10,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: .88,
       ),
-      itemBuilder: (context, i) {
+      itemBuilder: (BuildContext context, int index) {
         return ProductCard(mockProduct);
       },
     );
