@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'auth/login_page.dart';
 import 'list_page.dart';
+import 'list_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key key}) : super(key: key);
@@ -20,15 +21,13 @@ class _RootPageState extends State<RootPage> {
   @override
   void initState() {
     super.initState();
-    user == null
-        ? Navigator.pushNamedAndRemoveUntil(context, LoginPage.id, (_) => false)
-        : Navigator.pushNamedAndRemoveUntil(context, ListPage.id, (_) => false);
+    // user == null
+    //     ? Navigator.pushNamedAndRemoveUntil(context, LoginPage.id, (_) => false)
+    //     : Navigator.pushNamedAndRemoveUntil(context, ListPage.id, (_) => false);
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
+    return user == null ? LoginPage() : ListPage();
   }
 }
