@@ -112,7 +112,7 @@ class ProductListing extends StatelessWidget {
       itemCount: 10,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: .89,
+        childAspectRatio: .85,
       ),
       itemBuilder: (BuildContext context, int index) {
         return ProductCard(mockProduct);

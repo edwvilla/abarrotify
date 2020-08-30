@@ -12,63 +12,70 @@ class ProductCard extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.all(5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                product.image,
+        child: Flexible(
+          flex: 1,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  product.image,
+                ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    product.name,
-                    style: TextStyle(
-                      color: Colors.grey[850],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                  Row(
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Flexible(
+                  flex: 1,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                      Text(
+                        product.name,
+                        style: TextStyle(
+                          color: Colors.grey[850],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                      Row(
                         children: <Widget>[
-                          Text(
-                            '\$ ${product.price}',
-                            style: TextStyle(color: Colors.grey[850]),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                '\$ ${product.price}',
+                                style: TextStyle(color: Colors.grey[850]),
+                              ),
+                              Text(product.unit)
+                            ],
                           ),
-                          Text(product.unit)
+                          const Spacer(),
+                          Column(
+                            children: <Widget>[
+                              RaisedButton(
+                                padding: const EdgeInsets.all(0),
+                                child: const Text(
+                                  'Comprar',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                color: Colors.greenAccent[700],
+                                onPressed: () {
+                                  //TODO Add basket functionality on card
+                                },
+                              ),
+                            ],
+                          )
                         ],
                       ),
-                      const Spacer(),
-                      Column(
-                        children: <Widget>[
-                          RaisedButton(
-                            padding: const EdgeInsets.all(0),
-                            child: const Text(
-                              'Comprar',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            color: Colors.greenAccent[700],
-                            onPressed: () {
-                              //TODO Add basket functionality on card
-                            },
-                          ),
-                        ],
-                      )
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
