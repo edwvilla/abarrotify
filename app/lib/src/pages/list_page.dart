@@ -1,3 +1,4 @@
+import 'package:abarrotify/src/pages/shopping_basket_page.dart';
 import 'package:abarrotify/src/widgets/appbar.dart';
 import 'package:abarrotify/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,9 @@ class ListPage extends StatelessWidget {
       appBar: CustomAppBar(
         appBar: AppBar(),
         icon: Icons.shopping_basket_outlined,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, ShoppingCart.id);
+        },
       ),
       body: ListView(
         children: <Widget>[

@@ -1,5 +1,6 @@
 import 'package:abarrotify/src/pages/map_page.dart';
 import 'package:abarrotify/src/pages/seller/become_seller.dart';
+import 'package:abarrotify/src/pages/shopping_basket_page.dart';
 import 'package:flutter/material.dart';
 import 'src/const.dart';
 import 'src/pages/auth/login_page.dart';
@@ -19,9 +20,10 @@ class MyApp extends StatelessWidget {
       routes: <String, Widget Function(BuildContext)>{
         ListPage.id: (BuildContext context) => ListPage(),
         MapPage.id: (BuildContext context) => MapPage(),
+        ShoppingCart.id: (BuildContext context) => ShoppingCart(),
+        BecomeSeller.id: (BuildContext context) => BecomeSeller(),
         LoginPage.id: (BuildContext context) => LoginPage(),
         RegisterPage.id: (BuildContext context) => RegisterPage(),
-        BecomeSeller.id: (BuildContext context) => BecomeSeller(),
       },
     );
   }
