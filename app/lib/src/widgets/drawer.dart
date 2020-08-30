@@ -1,6 +1,7 @@
 import 'package:abarrotify/src/pages/list_page.dart';
 import 'package:abarrotify/src/pages/map_page.dart';
 import 'package:abarrotify/src/pages/seller/become_seller.dart';
+import 'package:abarrotify/src/pages/shopping_basket_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -50,6 +51,13 @@ class CustomDrawer extends StatelessWidget {
             trailing: const Icon(Icons.room),
             onTap: () {
               Navigator.pushNamed(context, MapPage.id);
+            },
+          ),
+          ListTile(
+            title: const Text('Carrito de compras'),
+            trailing: const Icon(Icons.shopping_basket),
+            onTap: () {
+              Navigator.pushNamed(context, ShoppingCart.id);
             },
           ),
           ListTile(
